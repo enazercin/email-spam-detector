@@ -1,0 +1,128 @@
+﻿@using Microsoft.AspNetCore.Http;
+@{
+    ViewData["Title"] = "SendMail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var userName = Context.Session.GetString("userName");
+    var userMailAddress = Context.Session.GetString("userMailAddress");
+}
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="~/css/sendmailcustom.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<br>
+<br>
+<div class="container bootdey">
+    <div class="email-app">
+        <nav>
+            <h5>@userName</h5>
+            <span>@userMailAddress</span>
+            <br />
+            <br />
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/Mailbox/Inbox"><i class="fa fa-inbox"></i> Inbox</a>
+                </li>
+                <li>
+                    <a href="/Mailbox/SpamMails"><i class="fa fa-envelope-o"></i>Spambox</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-trash-o"></i>Trash</a>
+                </li>
+            </ul>
+        </nav>
+        <main>
+            <p class="text-center">New Message</p>
+            @using (Html.BeginForm("SendMailPost", "Sender", FormMethod.Post))
+            {
+                <form>
+                    <div class="form-row mb-3">
+                        <label for="to" class="col-2 col-sm-1 col-form-label">To:</label>
+                        <div class="col-10 col-sm-11">
+                            <input type="email" name="userName" required class="form-control" id="userName" placeholder="Type email">
+                        </div>
+
+                        <label for="to" class="col-2 col-sm-1 col-form-label">Header:</label>
+                        <div class="col-10 col-sm-11">
+                            <input type="text" name="header" required class="form-control" id="header" placeholder="Type email">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-11 ml-auto">
+                            <div class="toolbar" role="toolbar">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-light">
+                                        <span class="fa fa-bold"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-light">
+                                        <span class="fa fa-italic"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-light">
+                                        <span class="fa fa-underline"></span>
+                                    </button>
+                                </div>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-light">
+                                        <span class="fa fa-align-left"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-light">
+                                        <span class="fa fa-align-right"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-light">
+                                        <span class="fa fa-align-center"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-light">
+                                        <span class="fa fa-align-justify"></span>
+                                    </button>
+                                </div>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-light">
+                                        <span class="fa fa-indent"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-light">
+                                        <span class="fa fa-outdent"></span>
+                                    </button>
+                                </div>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-light">
+                                        <span class="fa fa-list-ul"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-light">
+                                        <span class="fa fa-list-ol"></span>
+                                    </button>
+                                </div>
+                                <button type="button" class="btn btn-light">
+                                    <span class="fa fa-trash-o"></span>
+                                </button>
+                                <button type="button" class="btn btn-light">
+                                    <span class="fa fa-paperclip"></span>
+                                </button>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">
+                                        <span class="fa fa-tags"></span>
+                                        <span class="caret"></span>
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">add label <span class="badge badge-danger"> Home</span></a>
+                                        <a class="dropdown-item" href="#">add label <span class="badge badge-info"> Job</span></a>
+                                        <a class="dropdown-item" href="#">add label <span class="badge badge-success"> Clients</span></a>
+                                        <a class="dropdown-item" href="#">add label <span class="badge badge-warning"> News</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mt-4">
+                                <textarea class="form-control" id="content" required name="content" rows="12" placeholder="Write your message"></textarea>
+                            </div>
+                            <br />
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-success" value="Send" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            }
+        </main>
+    </div>
+</div>
+

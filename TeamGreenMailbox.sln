@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamGreenWebApp", "TeamGreenWebApp\TeamGreenWebApp.csproj", "{559DD6F4-DAE9-485C-9D3C-83992CB866AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{559DD6F4-DAE9-485C-9D3C-83992CB866AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{559DD6F4-DAE9-485C-9D3C-83992CB866AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{559DD6F4-DAE9-485C-9D3C-83992CB866AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{559DD6F4-DAE9-485C-9D3C-83992CB866AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1E5EDF70-BFD7-4CF5-8814-2BDBBD064605}
+	EndGlobalSection
+EndGlobal
